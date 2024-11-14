@@ -7,6 +7,16 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+// Lauren adding code for session management
+const session = require('express-session');
+
+app.use(session({
+    secret: 'your-secret-key', // Replace with a secure key
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 1 * 60 * 1000 } // Session expires in 1 minutes (FOR TESTING)
+}));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
