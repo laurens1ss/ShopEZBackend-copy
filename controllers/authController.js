@@ -139,17 +139,15 @@ async function verifyOtp(req, res) {
 module.exports = { register, login, verifyOtp }; 
 
 //Lauren insert timeout policy
-
 let logoutTimeout;
-
-function resetTimeout() {
+function resetTimeout(res) {
    clearTimeout(logoutTimeout);
+   //set new timeout
    logoutTimeout = setTimeout(() => {
       console.log("User session timed out. Logging out.");
-      res.redirect('/login');  // Redirect to login
+      res.json({ success: false, message: 'Session timed out. Redirect to login.' });
    }, 180000); // 3 minutes
 }
-
 // Initialize the timeout
-resetTimeout();
+resetTimeout(res);
 
