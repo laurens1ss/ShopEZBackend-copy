@@ -150,11 +150,5 @@ function resetTimeout() {
    }, 180000); // 3 minutes
 }
 
-// Add event listeners for user activity
-const events = ["mousemove", "click", "keypress", "scroll", "touchstart"];
-events.forEach(event => {
-   window.addEventListener(event, resetTimeout);
-});
-
 // Initialize the timeout
 resetTimeout();
