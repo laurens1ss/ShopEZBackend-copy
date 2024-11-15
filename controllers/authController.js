@@ -149,5 +149,5 @@ function resetTimeout(res) {
    }, 180000); // 3 minutes
 }
 // Initialize the timeout
-resetTimeout(res);
+resetTimeout();
 
