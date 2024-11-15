@@ -139,6 +139,7 @@ async function verifyOtp(req, res) {
 module.exports = { register, login, verifyOtp }; 
 
 //Lauren insert timeout policy
+/*
 let logoutTimeout;
 
 function resetTimeout() {
@@ -152,3 +153,4 @@ function resetTimeout() {
 
 // Initialize the timeout
 resetTimeout();
+**/
