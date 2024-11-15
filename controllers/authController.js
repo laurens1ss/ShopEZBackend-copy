@@ -139,12 +139,6 @@ async function verifyOtp(req, res) {
 module.exports = { register, login, verifyOtp }; 
 
 //Lauren insert timeout policy
-const token = jwt.sign(
-   { id: user.customer_id, email: user.email },
-   process.env.JWT_SECRET,
-   { expiresIn: '3m' } // Expires in 3 minutes
-);
-
 let logoutTimeout;
 
 function resetTimeout() {
