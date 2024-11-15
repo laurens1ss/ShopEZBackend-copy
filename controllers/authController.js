@@ -144,7 +144,7 @@ let logoutTimeout;
 function resetTimeout() {
    clearTimeout(logoutTimeout);
    logoutTimeout = setTimeout(() => {
-      alert("You have been logged out due to inactivity.");
+      console.log("User session timed out. Logging out.");
       localStorage.removeItem('token'); // Clear stored token
       window.location.href = '/login';  // Redirect to login
    }, 180000); // 3 minutes
